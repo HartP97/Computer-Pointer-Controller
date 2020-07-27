@@ -38,7 +38,7 @@ Flow of the data inside between the model and inside the application was the fol
 5. **Step: Install** all the necessary **libraries/dependencies** with the command `pip install requirements.txt` (on macOS: use `pip3` instead of `pip`)
 
 
-- Project Setup and Installation
+# Left to-do
 - How to run a demo
 - The command line options
 - Explanation of the directory structure and overview of the files used in the project
