@@ -39,6 +39,8 @@ Flow of the data inside between the model and inside the application was the fol
 
 ## Directory Structure
 
+![project_structure](https://github.com/HartP97/Computer-Pointer-Controller/blob/master/result_images/project_structure.png)
+
 **main-directory**:
 - **bin**: currently only contains the example video, which was part of the atarting project of Udacity
 - **README.md**: this document you are currently reading
@@ -71,5 +73,32 @@ If everything was installed correctly, the application can be run with the follo
 (Also see above mentioned command line options to achieve different results)
 
 ## Benchmarking
-- results for models of different precisions
+When comparing FP16, FP32 and FP32-INT, I have focused on Model-Load-Time, Inference Time and Frames per Second (note: the face-detection model only offered FP32-INT1).
+
+### Model-Load-Time
+![model_load_time](https://github.com/HartP97/Computer-Pointer-Controller/blob/master/result_images/model_load_time.png)
+### Inference Time
+![inference_time](https://github.com/HartP97/Computer-Pointer-Controller/blob/master/result_images/inference_time.png)
+### Frames per Second
+![fps](https://github.com/HartP97/Computer-Pointer-Controller/blob/master/result_images/frame_per_second.png)
+
+### Comparison
+#### FP16
+- model-load-time: 0.44661 s
+- inference time: 23.5582 s
+- fps: 2.504
+#### FP32
+- model-load-time: 0.5140 s 
+- inference time: 23.2349 s
+- fps: 2.539
+#### FP32-INT 8
+- model-load-time: 2.1982 s
+- inference time: 23.5177 s 
+- fps: 2.509
+
+### Results
+- First we can notice that the model-load-time is the lowest for FP16, which makes sense because it is the lowest precision in our comparison (lower precision -> lower accuracy)
+- therefore it is not surprising that FPR32-INT 8 takes the longest to load up, as higher precisions lead to higher weight of the model (+ larger model file)
+- FPS and Inference Time are pretty similar for the three models (within error deviation)
 - Discussion of the difference in the results among the models with different precisions (for instance, are some models more accurate than others?)
+
