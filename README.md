@@ -1,5 +1,8 @@
 # Computer-Pointer-Controller
 
+![result_screenshot](https://github.com/HartP97/Computer-Pointer-Controller/blob/master/result_images/full_result_screenshot.png)
+
+(**Note**: A video of the result where the mouse is moving, can be downloaded in the "result_images" directory)
 In this project the gaze detection model is used to control the mouse pointer of your computer. The mouse pointer changes position accordingly to the estimated gaze of the users's eyes. It demostrates the ability to run multiple models in the same machine and coordinate the flow of data between those models.
 
 ### How it works
