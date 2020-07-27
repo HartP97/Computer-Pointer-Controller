@@ -37,10 +37,24 @@ Flow of the data inside between the model and inside the application was the fol
 - Download example command: `python3 <openvino dir>/deployment_tools/tools/model_downloader/downloader.py --name "face-detection-adas-binary-0001"`
 5. **Step: Install** all the necessary **libraries/dependencies** with the command `pip install requirements.txt` (on macOS: use `pip3` instead of `pip`)
 
+## Command line options
+The file `app.py` has following command line options available:
+- **-fdm**: The location of the face-detection model (required).
+- **-lrm**: The location of the landmark-regression model (required).
+- **-hpm**: The location of the head-pose-estimation model (required).
+- **-gem**: The location of the gaze-estimation mode (required).
+- **-i**: Input-type of the Stream, either 'cam' or give video-file-directory.
+- **-d**: The device name, if not 'CPU', can be GPU, FPGA or MYRIAD.
+- **-ct**: The confidence threshold to use with the models.
+- **-flags**: Select from following flags: ffd, flr, fhp, fge (if multiple, enter with single [Space]). (ffd -> flagFaceDetection, flr -> flagLandmarkRegression, fhp -> flagHeadPose, fge -> flagGazeEstimation)
+
+## Run the application
+If everything was installed correctly, the application can be run with the following command:
+`python3 app.py -fdm models/face-detection-adas-binary-0001.xml -lrm models/landmarks-regression-retail-0009.xml -hpm models/head-pose-estimation-adas-0001.xml -gem models/gaze-estimation-adas-0002.xml -flags ffd flr fhp fge  -i demo.mp4`
+(Also see above mentioned command line options to achieve different results)
+
 
 # Left to-do
-- How to run a demo
-- The command line options
 - Explanation of the directory structure and overview of the files used in the project
 
 Benchmarking
