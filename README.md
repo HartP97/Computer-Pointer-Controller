@@ -37,6 +37,23 @@ Flow of the data inside between the model and inside the application was the fol
 - Download example command: `python3 <openvino dir>/deployment_tools/tools/model_downloader/downloader.py --name "face-detection-adas-binary-0001"`
 5. **Step: Install** all the necessary **libraries/dependencies** with the command `pip install requirements.txt` (on macOS: use `pip3` instead of `pip`)
 
+## Directory Structure
+
+**main-directory**:
+- **bin**: currently only contains the example video, which was part of the atarting project of Udacity
+- **README.md**: this document you are currently reading
+- **requirements.txt**: required librararies/dependecies that have to be installed
+- **src**: 
+  - **app.py**: Main file of the application that loads, runs, connects all the models and calculates/displays the results
+  - **face_detection.py**
+  - **gaze_estimation.py**
+  - **general_model.py**: Contains several pre-/post-processing functions for different models
+  - **head_pose_detection.py**
+  - **input_feeder.py**: Used to load video or webcam stream
+  - **landmark_detection.py**
+  - **models**: Directory contains the above mentioned models (not part of this GitHub Repo, need to be downloaded as described above)
+  - **mouse_controller.py**: used to move the mouse based on the final results of the gaze estimation model
+  
 ## Command line options
 The file `app.py` has following command line options available:
 - **-fdm**: The location of the face-detection model (required).
@@ -50,13 +67,9 @@ The file `app.py` has following command line options available:
 
 ## Run the application
 If everything was installed correctly, the application can be run with the following command:
-`python3 app.py -fdm models/face-detection-adas-binary-0001.xml -lrm models/landmarks-regression-retail-0009.xml -hpm models/head-pose-estimation-adas-0001.xml -gem models/gaze-estimation-adas-0002.xml -flags ffd flr fhp fge  -i demo.mp4`
+`python3 app.py -fdm models/face-detection-adas-binary-0001.xml -lrm models/landmarks-regression-retail-0009.xml -hpm models/head-pose-estimation-adas-0001.xml -gem models/gaze-estimation-adas-0002.xml -flags ffd flr fhp fge  -i ../bin/demo.mp4`
 (Also see above mentioned command line options to achieve different results)
 
-
-# Left to-do
-- Explanation of the directory structure and overview of the files used in the project
-
-Benchmarking
+## Benchmarking
 - results for models of different precisions
 - Discussion of the difference in the results among the models with different precisions (for instance, are some models more accurate than others?)
