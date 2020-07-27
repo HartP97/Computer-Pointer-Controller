@@ -100,5 +100,4 @@ When comparing FP16, FP32 and FP32-INT, I have focused on Model-Load-Time, Infer
 - First we can notice that the model-load-time is the lowest for FP16, which makes sense because it is the lowest precision in our comparison (lower precision -> lower accuracy)
 - therefore it is not surprising that FPR32-INT 8 takes the longest to load up, as higher precisions lead to higher weight of the model (+ larger model file)
 - FPS and Inference Time are pretty similar for the three models (within error deviation)
-- Discussion of the difference in the results among the models with different precisions (for instance, are some models more accurate than others?)
 
